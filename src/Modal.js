@@ -17,7 +17,6 @@ class Modal extends Component {
     fetch("ap2/corona/addvote", {
       method: "POST",
       body: JSON.stringify(this.state),
-      credentials: "include",
       headers: {
         "Content-Type": "application/json"
       }
