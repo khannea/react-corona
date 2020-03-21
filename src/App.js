@@ -9,7 +9,9 @@ function auth(name) {}
 class App extends Component {
   state = {
     modalActive: false,
-    to: null
+    to: null,
+    younes: 0,
+    lucas: 0
   };
 
   componentDidMount() {
@@ -23,12 +25,10 @@ class App extends Component {
     });
     fetch(req)
       .then(response => {
-        console.log(response);
         return response.json();
       })
       .then(data => {
-        console.log("data");
-        console.log(data);
+        this.setState(data);
       });
   };
 
@@ -52,6 +52,7 @@ class App extends Component {
   };
 
   render() {
+    let { younes, lucas } = this.props.state;
     return (
       <div className="App">
         <Modal
