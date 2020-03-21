@@ -26,6 +26,7 @@ class App extends Component {
         return response.json();
       })
       .then(data => {
+        console.log("data");
         console.log(data);
       });
   };
