@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./Modal.scss";
 import younes from "./younes.png";
+import lucas from "./lucas.jpg";
 
 class Modal extends Component {
   constructor(props) {
@@ -36,6 +37,7 @@ class Modal extends Component {
 
   test_reponse = e => {
     e.preventDefault();
+
     if (this.state.from == "younes") {
       if (this.state.value == "naruto") {
         alert("Bonne réponse!");
@@ -43,7 +45,15 @@ class Modal extends Component {
       } else {
         alert("Mauvaise réponse!");
       }
+    } else if (this.state.from == "lucas") {
+      if (this.state.value == "camera") {
+        alert("Bonne réponse!");
+        this.send_vote("lucas", this.props.to);
+      } else {
+        alert("Mauvaise réponse!");
+      }
     }
+
     this.setState({
       value: "",
       from: null
@@ -73,8 +83,15 @@ class Modal extends Component {
               >
                 <img src={younes} alt="younes" style={{ width: "200px" }}></img>
               </div>
+              <div
+                className="younes_choice"
+                onClick={() => this.setState({ from: "lucas" })}
+              >
+                <img src={lucas} alt="lucas" style={{ width: "200px" }}></img>
+              </div>
             </div>
           )}
+
           <button className="close" onClick={this.props.closing}>
             &times;
           </button>
@@ -82,6 +99,27 @@ class Modal extends Component {
           {this.state.from === "younes" && (
             <div id="identification">
               <div className="message"> Que vaut 1000 ans de douleur ? </div>
+
+              <form onSubmit={this.test_reponse}>
+                <label>
+                  Réponse :
+                  <input
+                    type="text"
+                    value={this.state.value}
+                    onChange={this.handleChange}
+                  />
+                </label>
+                <input type="submit" value="Envoyer" />
+              </form>
+            </div>
+          )}
+
+          {this.state.from === "lucas" && (
+            <div id="identification">
+              <div className="message">
+                {" "}
+                Il y en a 3 à coté de chez toi (sans accent et s){" "}
+              </div>
 
               <form onSubmit={this.test_reponse}>
                 <label>
