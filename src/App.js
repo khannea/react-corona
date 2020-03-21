@@ -19,17 +19,17 @@ class App extends Component {
   }
 
   getDataFromDb = () => {
-    const req = new Request("/corona/getvote", {
-      method: "GET",
-      cache: "default"
-    });
-    fetch(req)
-      .then(response => {
-        return response.json();
-      })
-      .then(data => {
-        console.log(data);
-      });
+    // const req = new Request("/corona/getvote", {
+    //   method: "GET",
+    //   cache: "default"
+    // });
+    // fetch(req)
+    //   .then(response => {
+    //     return response.json();
+    //   })
+    //   .then(data => {
+    //     console.log(data);
+    //   });
   };
 
   close = () => {
@@ -85,8 +85,8 @@ class App extends Component {
       } > < /img> <
       div >
       <
-      b > Vote: 0 < /b> <
-      /div> <
+      b > Vote: 0 < /b> < /
+      div > <
       /button>
 
       <
@@ -105,10 +105,10 @@ class App extends Component {
       } > < /img> <
       div >
       <
-      b > Vote: 0 < /b> <
-      /div> <
-      /button> <
-      /div>
+      b > Vote: 0 < /b> < /
+      div > <
+      /button> < /
+      div >
     );
   }
 }

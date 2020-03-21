@@ -13,25 +13,25 @@ class Modal extends Component {
   }
 
   send_vote(from, to) {
-    console.log("from:" + from + " to:" + to);
-    fetch("/corona/addvote", {
-      method: "POST",
-      body: JSON.stringify(this.state),
-      credentials: "include",
-      headers: {
-        "Content-Type": "application/json"
-      }
-    })
-      .then(res => {
-        if (res.status === 401) {
-          this.setState({ falsePassword: true });
-        } else if (res.status === 404) {
-          console.log("Probleme serveur");
-        } else {
-          console.log(res.headers.get("pseudo"));
-        }
-      })
-      .catch(error => console.error("Error:", error));
+    // console.log("from:" + from + " to:" + to);
+    // fetch("/corona/addvote", {
+    //   method: "POST",
+    //   body: JSON.stringify(this.state),
+    //   credentials: "include",
+    //   headers: {
+    //     "Content-Type": "application/json"
+    //   }
+    // })
+    //   .then(res => {
+    //     if (res.status === 401) {
+    //       this.setState({ falsePassword: true });
+    //     } else if (res.status === 404) {
+    //       console.log("Probleme serveur");
+    //     } else {
+    //       console.log(res.headers.get("pseudo"));
+    //     }
+    //   })
+    //   .catch(error => console.error("Error:", error));
   }
 
   test_reponse = e => {
