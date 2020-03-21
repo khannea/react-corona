@@ -16,7 +16,7 @@ class Modal extends Component {
     console.log("from:" + from + " to:" + to);
     fetch("/ap2/corona/addvote", {
       method: "POST",
-      body: JSON.stringify(this.state),
+      body: JSON.stringify({ from, to }),
       headers: {
         "Content-Type": "application/json"
       }
