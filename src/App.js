@@ -23,6 +23,7 @@ class App extends Component {
     });
     fetch(req)
       .then(response => {
+        console.log(response);
         return response.json();
       })
       .then(data => {
