@@ -10,8 +10,8 @@ class App extends Component {
   state = {
     modalActive: false,
     to: null,
-    younes: 0,
-    lucas: 0
+    nb_younes: 0,
+    nb_lucas: 0
   };
 
   componentDidMount() {
@@ -52,7 +52,7 @@ class App extends Component {
   };
 
   render() {
-    let { younes, lucas } = this.state;
+    let { nb_younes, nb_lucas } = this.state;
     return (
       <div className="App">
         <Modal
@@ -72,7 +72,7 @@ class App extends Component {
             }}
           ></img>
           <div>
-            <b> Vote: 0 </b>
+            <b> Vote: {nb_younes} </b>
           </div>
         </button>
         <button onClick={this.vote_lucas}>
@@ -84,7 +84,7 @@ class App extends Component {
             }}
           ></img>
           <div>
-            <b> Vote: 0 </b>
+            <b> Vote: {nb_lucas} </b>
           </div>
         </button>
       </div>
