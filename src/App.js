@@ -1,6 +1,4 @@
-import React, {
-  Component
-} from "react";
+import React, { Component } from "react";
 import "./App.css";
 import younes from "./younes.png";
 import lucas from "./lucas.jpg";
@@ -14,23 +12,23 @@ class App extends Component {
     to: null
   };
 
-  componentDidMount() {
-    this.getDataFromDb();
-  }
+  // componentDidMount() {
+  //   this.getDataFromDb();
+  // }
 
-  getDataFromDb = () => {
-    // const req = new Request("/corona/getvote", {
-    //   method: "GET",
-    //   cache: "default"
-    // });
-    // fetch(req)
-    //   .then(response => {
-    //     return response.json();
-    //   })
-    //   .then(data => {
-    //     console.log(data);
-    //   });
-  };
+  // getDataFromDb = () => {
+  //   // const req = new Request("/corona/getvote", {
+  //   //   method: "GET",
+  //   //   cache: "default"
+  //   // });
+  //   // fetch(req)
+  //   //   .then(response => {
+  //   //     return response.json();
+  //   //   })
+  //   //   .then(data => {
+  //   //     console.log(data);
+  //   //   });
+  // };
 
   close = () => {
     this.setState({
@@ -52,63 +50,41 @@ class App extends Component {
   };
 
   render() {
-    return ( <
-      div className = "App" >
-      <
-      Modal active = {
-        this.state.modalActive
-      }
-      closing = {
-        this.close
-      }
-      to = {
-        this.state.to
-      }
-      />
-
-      <
-      h1 > Choisis lequel de tes amis attrapera le COVID - 19 en premier!! < /h1>
-
-      <
-      button onClick = {
-        this.vote_younes
-      } >
-      <
-      img src = {
-        younes
-      }
-      alt = "younes"
-      style = {
-        {
-          width: "200px"
-        }
-      } > < /img> <
-      div >
-      <
-      b > Vote: 0 < /b> < /
-      div > <
-      /button>
-
-      <
-      button onClick = {
-        this.vote_lucas
-      } >
-      <
-      img src = {
-        lucas
-      }
-      alt = "lucas"
-      style = {
-        {
-          width: "200px"
-        }
-      } > < /img> <
-      div >
-      <
-      b > Vote: 0 < /b> < /
-      div > <
-      /button> < /
-      div >
+    return (
+      <div className="App">
+        <Modal
+          active={this.state.modalActive}
+          closing={this.close}
+          to={this.state.to}
+        />
+        <h1>
+          Choisis lequel de tes amis attrapera le COVID - 19 en premier!!{" "}
+        </h1>
+        <button onClick={this.vote_younes}>
+          <img
+            src={younes}
+            alt="younes"
+            style={{
+              width: "200px"
+            }}
+          ></img>
+          <div>
+            <b> Vote: 0 </b>
+          </div>
+        </button>
+        <button onClick={this.vote_lucas}>
+          <img
+            src={lucas}
+            alt="lucas"
+            style={{
+              width: "200px"
+            }}
+          ></img>
+          <div>
+            <b> Vote: 0 </b>
+          </div>
+        </button>
+      </div>
     );
   }
 }
