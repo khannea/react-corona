@@ -15,10 +15,10 @@ class App extends Component {
   };
 
   componentDidMount() {
-    this.getDataFromDb();
+    this.refreshVote();
   }
 
-  getDataFromDb = () => {
+  refreshVote = () => {
     const req = new Request("/ap2/corona/getvote", {
       method: "GET",
       cache: "default"
@@ -59,6 +59,7 @@ class App extends Component {
           active={this.state.modalActive}
           closing={this.close}
           to={this.state.to}
+          refresh={this.refreshVote}
         />
         <h1>
           Choisis lequel de tes amis attrapera le COVID - 19 en premier!!{" "}

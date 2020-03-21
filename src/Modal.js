@@ -48,6 +48,7 @@ class Modal extends Component {
       value: "",
       from: null
     });
+    this.props.refresh();
     this.props.closing();
   };
 
