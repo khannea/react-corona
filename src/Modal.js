@@ -23,6 +23,7 @@ class Modal extends Component {
       }
     })
       .then(res => {
+        console.log(res);
         if (res.status === 401) {
           this.setState({ falsePassword: true });
         } else if (res.status === 404) {
