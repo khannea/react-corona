@@ -1,58 +1,57 @@
 import React, { Component } from "react";
 import "./App.css";
-import younes from "./younes.png";
-import lucas from "./lucas.jpg";
-import Modal from "./Modal";
-
-function auth(name) {}
+//import younes from "./younes.png";
+//import lucas from "./lucas.jpg";
+//import Modal from "./Modal";
 
 class App extends Component {
-  state = {
-    modalActive: false,
-    to: null
-  };
-
-  // componentDidMount() {
-  //   this.getDataFromDb();
-  // }
-
-  // getDataFromDb = () => {
-  //   // const req = new Request("/corona/getvote", {
-  //   //   method: "GET",
-  //   //   cache: "default"
-  //   // });
-  //   // fetch(req)
-  //   //   .then(response => {
-  //   //     return response.json();
-  //   //   })
-  //   //   .then(data => {
-  //   //     console.log(data);
-  //   //   });
+  // state = {
+  //   modalActive: false,
+  //   to: null
   // };
 
-  close = () => {
-    this.setState({
-      modalActive: false
-    });
-  };
+  // // componentDidMount() {
+  // //   this.getDataFromDb();
+  // // }
 
-  vote_younes = () => {
-    this.setState({
-      modalActive: true,
-      to: "younes"
-    });
-  };
-  vote_lucas = () => {
-    this.setState({
-      modalActive: true,
-      to: "lucas"
-    });
-  };
+  // // getDataFromDb = () => {
+  // //   // const req = new Request("/corona/getvote", {
+  // //   //   method: "GET",
+  // //   //   cache: "default"
+  // //   // });
+  // //   // fetch(req)
+  // //   //   .then(response => {
+  // //   //     return response.json();
+  // //   //   })
+  // //   //   .then(data => {
+  // //   //     console.log(data);
+  // //   //   });
+  // // };
+
+  // close = () => {
+  //   this.setState({
+  //     modalActive: false
+  //   });
+  // };
+
+  // vote_younes = () => {
+  //   this.setState({
+  //     modalActive: true,
+  //     to: "younes"
+  //   });
+  // };
+  // vote_lucas = () => {
+  //   this.setState({
+  //     modalActive: true,
+  //     to: "lucas"
+  //   });
+  // };
 
   render() {
     return (
       <div className="App">
-        <Modal
+        BONJOUR
+        {/* <Modal
           active={this.state.modalActive}
           closing={this.close}
           to={this.state.to}
@@ -83,7 +82,7 @@ class App extends Component {
           <div>
             <b> Vote: 0 </b>
           </div>
-        </button>
+        </button> */}
       </div>
     );
   }
