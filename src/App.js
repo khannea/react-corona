@@ -12,23 +12,23 @@ class App extends Component {
     to: null
   };
 
-  // componentDidMount() {
-  //   this.getDataFromDb();
-  // }
+  componentDidMount() {
+    this.getDataFromDb();
+  }
 
-  // getDataFromDb = () => {
-  //   // const req = new Request("/corona/getvote", {
-  //   //   method: "GET",
-  //   //   cache: "default"
-  //   // });
-  //   // fetch(req)
-  //   //   .then(response => {
-  //   //     return response.json();
-  //   //   })
-  //   //   .then(data => {
-  //   //     console.log(data);
-  //   //   });
-  // };
+  getDataFromDb = () => {
+    const req = new Request("ap2/corona/getvote", {
+      method: "GET",
+      cache: "default"
+    });
+    fetch(req)
+      .then(response => {
+        return response.json();
+      })
+      .then(data => {
+        console.log(data);
+      });
+  };
 
   close = () => {
     this.setState({
