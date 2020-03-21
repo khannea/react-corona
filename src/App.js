@@ -17,7 +17,7 @@ class App extends Component {
   }
 
   getDataFromDb = () => {
-    const req = new Request("/ap2/memory_rank/get", {
+    const req = new Request("/ap2/corona/getvote", {
       method: "GET",
       cache: "default"
     });
