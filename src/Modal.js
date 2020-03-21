@@ -14,7 +14,7 @@ class Modal extends Component {
 
   send_vote(from, to) {
     console.log("from:" + from + " to:" + to);
-    fetch("ap2/corona/addvote", {
+    fetch("/ap2/corona/addvote", {
       method: "POST",
       body: JSON.stringify(this.state),
       headers: {
