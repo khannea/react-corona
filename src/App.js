@@ -52,7 +52,7 @@ class App extends Component {
   };
 
   render() {
-    let { younes, lucas } = this.props.state;
+    let { younes, lucas } = this.state;
     return (
       <div className="App">
         <Modal
