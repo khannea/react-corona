@@ -73,6 +73,23 @@ class Modal extends Component {
       } else {
         alert("Mauvaise réponse!");
       }
+    } else if (this.state.from == "bau") {
+      if (
+        this.state.value.toLowerCase() == "tatacoa" ||
+        this.state.value.toLowerCase() == "tattacoa"
+      ) {
+        alert("Bonne réponse!");
+        this.send_vote("bau", this.props.to);
+      } else {
+        alert("Mauvaise réponse!");
+      }
+    } else if (this.state.from == "romain") {
+      if (this.state.value.toLowerCase() == "42") {
+        alert("Bonne réponse!");
+        this.send_vote("romain", this.props.to);
+      } else {
+        alert("Mauvaise réponse!");
+      }
     }
 
     this.setState({
