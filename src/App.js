@@ -163,7 +163,7 @@ class App extends Component {
         )}
 
         <div className="question">
-          Choisis lequel de tes amis attrapera le COVID-19 en premier!!
+          Paris sur lequel de tes amis attrapera le COVID-19 en premier!!
         </div>
 
         {this.state.to === null && (
