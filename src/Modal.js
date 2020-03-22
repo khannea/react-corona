@@ -6,6 +6,7 @@ import lapuerta from "./lapuerta2.png";
 import bau from "./bau.png";
 import romain from "./romain.png";
 import dudu from "./dudu.png";
+import jerem from "./jerem2.png";
 
 class Modal extends Component {
   constructor(props) {
@@ -95,6 +96,13 @@ class Modal extends Component {
       if (this.state.value.toLowerCase() == "delta") {
         alert("Bonne réponse! Ton vote est bien pris en compte");
         this.send_vote("dudu", this.props.to);
+      } else {
+        alert("Mauvaise réponse!");
+      }
+    } else if (this.state.from == "jerem") {
+      if (this.state.value.toLowerCase() == "faucheur") {
+        alert("Bonne réponse! Ton vote est bien pris en compte");
+        this.send_vote("jerem", this.props.to);
       } else {
         alert("Mauvaise réponse!");
       }
@@ -200,6 +208,18 @@ class Modal extends Component {
                 ></img>
               </div>
             )}
+            {(this.state.from === "null" || this.state.from === "jerem") && (
+              <div onClick={() => this.setState({ from: "jerem" })}>
+                <img
+                  src={jerem}
+                  alt="jerem"
+                  className="image_profile"
+                  style={{
+                    height: "400px"
+                  }}
+                ></img>
+              </div>
+            )}
           </div>
 
           {this.state.from === "younes" && (
@@ -297,6 +317,27 @@ class Modal extends Component {
               <div className="message">
                 Lorsque je suis inférieur à zero, les solutions sont forcément
                 complexes.
+              </div>
+
+              <form onSubmit={this.test_reponse}>
+                <label>
+                  Réponse :
+                  <input
+                    type="text"
+                    value={this.state.value}
+                    onChange={this.handleChange}
+                  />
+                </label>
+                <input type="submit" value="Envoyer" />
+              </form>
+            </div>
+          )}
+
+          {this.state.from === "jerem" && (
+            <div id="identification">
+              <div className="message">
+                Attention à ne pas croiser mes 2 fusils à pompe. Tu me vois, tu
+                me vois plus, forme spectrale, je suis derriére toi!
               </div>
 
               <form onSubmit={this.test_reponse}>

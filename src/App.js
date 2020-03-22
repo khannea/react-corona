@@ -6,6 +6,8 @@ import lapuerta from "./lapuerta.gif";
 import bau from "./bau.gif";
 import romain from "./romain.gif";
 import dudu from "./dudu.gif";
+import jerem from "./jerem.gif";
+
 import Modal from "./Modal";
 
 function auth(name) {}
@@ -19,7 +21,8 @@ class App extends Component {
     nb_lapuerta: 0,
     nb_bau: 0,
     nb_romain: 0,
-    nb_dudu: 0
+    nb_dudu: 0,
+    nb_jerem: 0
   };
 
   componentDidMount() {
@@ -88,6 +91,13 @@ class App extends Component {
       to: "dudu"
     });
   };
+  vote_jerem = () => {
+    window.scrollTo(0, 0);
+    this.setState({
+      modalActive: true,
+      to: "jerem"
+    });
+  };
 
   render() {
     let {
@@ -96,7 +106,8 @@ class App extends Component {
       nb_lapuerta,
       nb_bau,
       nb_romain,
-      nb_dudu
+      nb_dudu,
+      nb_jerem
     } = this.state;
     return (
       <div className="App">
@@ -198,6 +209,20 @@ class App extends Component {
                 ></img>
                 <div>
                   <b> Vote: {nb_dudu} </b>
+                </div>
+              </button>
+            </div>
+            <div>
+              <button onClick={this.vote_jerem}>
+                <img
+                  src={jerem}
+                  alt="jerem"
+                  style={{
+                    height: "400px"
+                  }}
+                ></img>
+                <div>
+                  <b> Vote: {nb_jerem} </b>
                 </div>
               </button>
             </div>
