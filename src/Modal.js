@@ -231,9 +231,10 @@ class Modal extends Component {
                     type="text"
                     value={this.state.value}
                     onChange={this.handleChange}
+                    className="input_text"
                   />
                 </label>
-                <input type="submit" value="Envoyer" />
+                <input type="submit" value="Envoyer" className="input_button" />
               </form>
             </div>
           )}
@@ -249,9 +250,10 @@ class Modal extends Component {
                     type="text"
                     value={this.state.value}
                     onChange={this.handleChange}
+                    className="input_text"
                   />
                 </label>
-                <input type="submit" value="Envoyer" />
+                <input type="submit" value="Envoyer" className="input_button" />
               </form>
             </div>
           )}
@@ -270,9 +272,10 @@ class Modal extends Component {
                     type="text"
                     value={this.state.value}
                     onChange={this.handleChange}
+                    className="input_text"
                   />
                 </label>
-                <input type="submit" value="Envoyer" />
+                <input type="submit" value="Envoyer" className="input_button" />
               </form>
             </div>
           )}
@@ -288,9 +291,10 @@ class Modal extends Component {
                     type="text"
                     value={this.state.value}
                     onChange={this.handleChange}
+                    className="input_text"
                   />
                 </label>
-                <input type="submit" value="Envoyer" />
+                <input type="submit" value="Envoyer" className="input_button" />
               </form>
             </div>
           )}
@@ -306,9 +310,10 @@ class Modal extends Component {
                     type="text"
                     value={this.state.value}
                     onChange={this.handleChange}
+                    className="input_text"
                   />
                 </label>
-                <input type="submit" value="Envoyer" />
+                <input type="submit" value="Envoyer" className="input_button" />
               </form>
             </div>
           )}
@@ -326,9 +331,10 @@ class Modal extends Component {
                     type="text"
                     value={this.state.value}
                     onChange={this.handleChange}
+                    className="input_text"
                   />
                 </label>
-                <input type="submit" value="Envoyer" />
+                <input type="submit" value="Envoyer" className="input_button" />
               </form>
             </div>
           )}
@@ -347,9 +353,10 @@ class Modal extends Component {
                     type="text"
                     value={this.state.value}
                     onChange={this.handleChange}
+                    className="input_text"
                   />
                 </label>
-                <input type="submit" value="Envoyer" />
+                <input type="submit" value="Envoyer" className="input_button" />
               </form>
             </div>
           )}
