@@ -61,7 +61,7 @@ class App extends Component {
     });
   };
   vote_lapuerta = () => {
-    this.haut.current.focus();
+    window.scrollTo(0, 0);
     this.setState({
       modalActive: true,
       to: "lapuerta"
