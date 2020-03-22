@@ -1,18 +1,12 @@
 #modal {
   text-align: center;
-  display: flex;
-  flex-wrap: wrap;
+
   justify-content: center;
   position: absolute;
-  background-color: white;
-  z-index: 99999;
+  background-color: #d9cab3;
   height: 100%;
   width: 100%;
-  display: none;
 
-  &.open {
-    display: block;
-  }
 }
 
 .identification {
@@ -24,12 +18,14 @@
 
 .message {
   width: 100%;
-  font-size: 20px;
 }
 
 
 .close {
-  margin: 20px;
+  float: right;
+  border: 3px solid black;
+  width: fit-content;
+  margin: 5px;
 }
 
 .out {
@@ -38,6 +34,12 @@
 
 .image_profile {
   border-radius: 100%;
+  cursor: pointer;
+}
+
+.image_profile:hover {
+  filter: grayscale(1);
+  -webkit-filter: grayscale(1);
 }
 
 // @import url("https://fonts.googleapis.com/css?family=Oswald:500&display=swap");

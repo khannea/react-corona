@@ -125,16 +125,14 @@ class Modal extends Component {
 
   render() {
     return (
-      <div id="modal" className={this.props.active === true ? "open" : ""}>
+      <div id="modal">
         <div className="container auto">
           <div className="identification">
-            <div className="message">
-              <h1>
-                Qui es tu??
-                <button className="close" onClick={this.props.closing}>
-                  &larr;
-                </button>
-              </h1>
+            <div className=" message question">
+              Qui es tu??
+              <div className="close" onClick={this.props.closing}>
+                RETOUR
+              </div>
             </div>
             {(this.state.from === "null" || this.state.from === "younes") && (
               <div onClick={() => this.setState({ from: "younes" })}>
@@ -260,7 +258,10 @@ class Modal extends Component {
 
           {this.state.from === "lapuerta" && (
             <div id="identification">
-              <div className="message">Titre du tube qu'on doit sortir ?</div>
+              <div className="message">
+                Titre d'une musique qu'on devait créer. En deux mots. Hommage a
+                ton amour des pates
+              </div>
 
               <form onSubmit={this.test_reponse}>
                 <label>
@@ -315,8 +316,7 @@ class Modal extends Component {
           {this.state.from === "dudu" && (
             <div id="identification">
               <div className="message">
-                Lorsque je suis inférieur à zero, les solutions sont forcément
-                complexes.
+                Lorsque je suis inférieur à zero, les solutions sont complexes.
               </div>
 
               <form onSubmit={this.test_reponse}>
@@ -337,7 +337,7 @@ class Modal extends Component {
             <div id="identification">
               <div className="message">
                 Attention à ne pas croiser mes 2 fusils à pompe. Tu me vois, tu
-                me vois plus, forme spectrale, je suis derriére toi!
+                me vois plus, je suis derriére toi!
               </div>
 
               <form onSubmit={this.test_reponse}>
