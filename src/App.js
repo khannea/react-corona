@@ -162,12 +162,11 @@ class App extends Component {
           />
         )}
 
-        <div className="question">
-          Paris sur lequel de tes amis attrapera le COVID-19 en premier!!
-        </div>
-
         {this.state.to === null && (
           <div className="App">
+            <div className="question">
+              Paris sur lequel de tes amis attrapera le COVID-19 en premier!!
+            </div>
             {tab.map((item, index) => (
               <Vote_layout
                 nom={item.nom}
