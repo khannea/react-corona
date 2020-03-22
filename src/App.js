@@ -5,6 +5,7 @@ import lucas from "./lucas.gif";
 import lapuerta from "./lapuerta.gif";
 import bau from "./bau.gif";
 import romain from "./romain.gif";
+import dudu from "./dudu.gif";
 import Modal from "./Modal";
 
 function auth(name) {}
@@ -17,7 +18,8 @@ class App extends Component {
     nb_lucas: 0,
     nb_lapuerta: 0,
     nb_bau: 0,
-    nb_romain: 0
+    nb_romain: 0,
+    nb_dudu: 0
   };
 
   componentDidMount() {
@@ -74,9 +76,22 @@ class App extends Component {
       to: "romain"
     });
   };
+  vote_dudu = () => {
+    this.setState({
+      modalActive: true,
+      to: "dudu"
+    });
+  };
 
   render() {
-    let { nb_younes, nb_lucas, nb_lapuerta, nb_bau, nb_romain } = this.state;
+    let {
+      nb_younes,
+      nb_lucas,
+      nb_lapuerta,
+      nb_bau,
+      nb_romain,
+      nb_dudu
+    } = this.state;
     return (
       <div className="App">
         {this.state.to !== null && (
@@ -91,76 +106,97 @@ class App extends Component {
         <div className="question">
           <h1>Choisis lequel de tes amis attrapera le COVID-19 en premier!!</h1>
         </div>
-        <div>
-          <button onClick={this.vote_younes}>
-            <img
-              src={younes}
-              alt="younes"
-              style={{
-                height: "400px"
-              }}
-            ></img>
+
+        {this.state.to === null && (
+          <div className="App">
             <div>
-              <b> Vote: {nb_younes} </b>
+              <button onClick={this.vote_younes}>
+                <img
+                  src={younes}
+                  alt="younes"
+                  style={{
+                    height: "400px"
+                  }}
+                ></img>
+                <div>
+                  <b> Vote: {nb_younes} </b>
+                </div>
+              </button>
             </div>
-          </button>
-        </div>
-        <div>
-          <button onClick={this.vote_lucas}>
-            <img
-              src={lucas}
-              alt="lucas"
-              style={{
-                height: "400px"
-              }}
-            ></img>
+
             <div>
-              <b> Vote: {nb_lucas} </b>
+              <button onClick={this.vote_lucas}>
+                <img
+                  src={lucas}
+                  alt="lucas"
+                  style={{
+                    height: "400px"
+                  }}
+                ></img>
+                <div>
+                  <b> Vote: {nb_lucas} </b>
+                </div>
+              </button>
             </div>
-          </button>
-        </div>
-        <div>
-          <button onClick={this.vote_lapuerta}>
-            <img
-              src={lapuerta}
-              alt="lapuerta"
-              style={{
-                height: "400px"
-              }}
-            ></img>
+
             <div>
-              <b> Vote: {nb_lapuerta} </b>
+              <button onClick={this.vote_lapuerta}>
+                <img
+                  src={lapuerta}
+                  alt="lapuerta"
+                  style={{
+                    height: "400px"
+                  }}
+                ></img>
+                <div>
+                  <b> Vote: {nb_lapuerta} </b>
+                </div>
+              </button>
             </div>
-          </button>
-        </div>
-        <div>
-          <button onClick={this.vote_bau}>
-            <img
-              src={bau}
-              alt="bau"
-              style={{
-                height: "400px"
-              }}
-            ></img>
             <div>
-              <b> Vote: {nb_bau} </b>
+              <button onClick={this.vote_bau}>
+                <img
+                  src={bau}
+                  alt="bau"
+                  style={{
+                    height: "400px"
+                  }}
+                ></img>
+                <div>
+                  <b> Vote: {nb_bau} </b>
+                </div>
+              </button>
             </div>
-          </button>
-        </div>
-        <div>
-          <button onClick={this.vote_romain}>
-            <img
-              src={romain}
-              alt="romain"
-              style={{
-                height: "400px"
-              }}
-            ></img>
             <div>
-              <b> Vote: {nb_romain} </b>
+              <button onClick={this.vote_romain}>
+                <img
+                  src={romain}
+                  alt="romain"
+                  style={{
+                    height: "400px"
+                  }}
+                ></img>
+                <div>
+                  <b> Vote: {nb_romain} </b>
+                </div>
+              </button>
             </div>
-          </button>
-        </div>
+            <div>
+              <button onClick={this.vote_dudu}>
+                <img
+                  src={dudu}
+                  alt="dudu"
+                  style={{
+                    height: "400px"
+                  }}
+                ></img>
+                <div>
+                  <b> Vote: {nb_dudu} </b>
+                </div>
+              </button>
+            </div>
+          </div>
+        )}
       </div>
     );
   }

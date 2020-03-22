@@ -5,6 +5,7 @@ import lucas from "./lucas2.jpg";
 import lapuerta from "./lapuerta2.png";
 import bau from "./bau.png";
 import romain from "./romain.png";
+import dudu from "./dudu.png";
 
 class Modal extends Component {
   constructor(props) {
@@ -43,7 +44,7 @@ class Modal extends Component {
 
     if (this.state.from == "younes") {
       if (this.state.value.toLowerCase() == "tonus") {
-        alert("Bonne réponse!");
+        alert("Bonne réponse! Ton vote est bien pris en compte");
         this.send_vote("younes", this.props.to);
       } else {
         alert("Mauvaise réponse!");
@@ -55,7 +56,7 @@ class Modal extends Component {
         this.state.value.toLowerCase() == "caméras" ||
         this.state.value.toLowerCase() == "caméra"
       ) {
-        alert("Bonne réponse!");
+        alert("Bonne réponse! Ton vote est bien pris en compte");
         this.send_vote("lucas", this.props.to);
       } else {
         alert("Mauvaise réponse!");
@@ -68,7 +69,7 @@ class Modal extends Component {
         this.state.value.toLowerCase() == "double pene" ||
         this.state.value.toLowerCase() == "doublepenne"
       ) {
-        alert("Bonne réponse!");
+        alert("Bonne réponse! Ton vote est bien pris en compte");
         this.send_vote("lapuerta", this.props.to);
       } else {
         alert("Mauvaise réponse!");
@@ -78,15 +79,22 @@ class Modal extends Component {
         this.state.value.toLowerCase() == "tatacoa" ||
         this.state.value.toLowerCase() == "tattacoa"
       ) {
-        alert("Bonne réponse!");
+        alert("Bonne réponse! Ton vote est bien pris en compte");
         this.send_vote("bau", this.props.to);
       } else {
         alert("Mauvaise réponse!");
       }
     } else if (this.state.from == "romain") {
       if (this.state.value.toLowerCase() == "42") {
-        alert("Bonne réponse!");
+        alert("Bonne réponse! Ton vote est bien pris en compte");
         this.send_vote("romain", this.props.to);
+      } else {
+        alert("Mauvaise réponse!");
+      }
+    } else if (this.state.from == "dudu") {
+      if (this.state.value.toLowerCase() == "delta") {
+        alert("Bonne réponse! Ton vote est bien pris en compte");
+        this.send_vote("dudu", this.props.to);
       } else {
         alert("Mauvaise réponse!");
       }
@@ -180,6 +188,18 @@ class Modal extends Component {
                 ></img>
               </div>
             )}
+            {(this.state.from === "null" || this.state.from === "dudu") && (
+              <div onClick={() => this.setState({ from: "dudu" })}>
+                <img
+                  src={dudu}
+                  alt="dudu"
+                  className="image_profile"
+                  style={{
+                    height: "400px"
+                  }}
+                ></img>
+              </div>
+            )}
           </div>
 
           {this.state.from === "younes" && (
@@ -257,6 +277,27 @@ class Modal extends Component {
           {this.state.from === "romain" && (
             <div id="identification">
               <div className="message">Muhahahaha</div>
+
+              <form onSubmit={this.test_reponse}>
+                <label>
+                  Réponse :
+                  <input
+                    type="text"
+                    value={this.state.value}
+                    onChange={this.handleChange}
+                  />
+                </label>
+                <input type="submit" value="Envoyer" />
+              </form>
+            </div>
+          )}
+
+          {this.state.from === "dudu" && (
+            <div id="identification">
+              <div className="message">
+                Lorsque je suis inférieur à zero, les solutions sont forcément
+                complexes.
+              </div>
 
               <form onSubmit={this.test_reponse}>
                 <label>
