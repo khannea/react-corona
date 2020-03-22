@@ -128,7 +128,7 @@ class Modal extends Component {
       <div id="modal">
         <div className="container auto">
           <div className="identification">
-            <div className=" message question">
+            <div className=" question">
               Qui es tu??
               <div className="close" onClick={this.props.closing}>
                 RETOUR
@@ -301,7 +301,9 @@ class Modal extends Component {
 
           {this.state.from === "romain" && (
             <div id="identification">
-              <div className="message">Muhahahaha</div>
+              <div className="message">
+                Tu n'iras pas plus loin jeune padawan
+              </div>
 
               <form onSubmit={this.test_reponse}>
                 <label>
