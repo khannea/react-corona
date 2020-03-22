@@ -11,6 +11,11 @@ import Modal from "./Modal";
 function auth(name) {}
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.haut = React.createRef();
+  }
+
   state = {
     modalActive: false,
     to: null,
@@ -47,36 +52,42 @@ class App extends Component {
   };
 
   vote_younes = () => {
+    this.haut.current.focus();
     this.setState({
       modalActive: true,
       to: "younes"
     });
   };
   vote_lucas = () => {
+    this.haut.current.focus();
     this.setState({
       modalActive: true,
       to: "lucas"
     });
   };
   vote_lapuerta = () => {
+    this.haut.current.focus();
     this.setState({
       modalActive: true,
       to: "lapuerta"
     });
   };
   vote_bau = () => {
+    this.haut.current.focus();
     this.setState({
       modalActive: true,
       to: "bau"
     });
   };
   vote_romain = () => {
+    this.haut.current.focus();
     this.setState({
       modalActive: true,
       to: "romain"
     });
   };
   vote_dudu = () => {
+    this.haut.current.focus();
     this.setState({
       modalActive: true,
       to: "dudu"
@@ -103,7 +114,7 @@ class App extends Component {
           />
         )}
 
-        <div className="question">
+        <div className="question" ref={this.haut}>
           <h1>Choisis lequel de tes amis attrapera le COVID-19 en premier!!</h1>
         </div>
 
